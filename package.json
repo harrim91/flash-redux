@@ -1,0 +1,64 @@
+{
+  "name": "react-router-redux-flash",
+  "version": "0.0.1",
+  "description": "Flash messages for react applications using react-router and redux",
+  "main": "lib/index.js",
+  "module": "umd/ReactRouterReduxFlash.min.js",
+  "files": [
+    "*.md",
+    "dist",
+    "LICENSE",
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run build:commonjs & npm run build:umd & npm run build:umd:min",
+    "build:commonjs": "mkdir -p lib && babel ./src -d lib",
+    "build:umd": "webpack src/index.js umd/react-router-redux-flash.js",
+    "build:umd:min": "webpack -p src/index.js umd/react-router-redux-flash.min.js",
+    "lint": "eslint src test",
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/harrim91/react-router-redux-flash.git"
+  },
+  "keywords": [
+    "react",
+    "flash",
+    "redux",
+    "react-router",
+    "error",
+    "message",
+    "notification"
+  ],
+  "author": "Michael Harrison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrim91/react-router-redux-flash/issues"
+  },
+  "homepage": "https://github.com/harrim91/react-router-redux-flash#readme",
+  "dependencies": {
+    "react-router-redux": "^4.0.8",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^20.0.4",
+    "webpack": "^3.3.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
+  }
+}
