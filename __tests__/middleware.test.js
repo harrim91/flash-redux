@@ -1,28 +1,58 @@
-import { LOCATION_CHANGE } from 'react-router-redux';
 import { cycleFlash } from '../src/actions';
 import middleware from '../src/middleware';
 
 const mockDispatch = jest.fn();
+const TRIGGER = 'FOO';
 
 const fakeStore = () => ({
   dispatch: mockDispatch,
 });
 
-const dispatchWithFakeStore = (action) => {
+const dispatchWithFakeStore = (mw, action) => {
   let dispatched = null;
-  const dispatch = middleware(fakeStore())(
+  const dispatch = mw(fakeStore())(
     actionAttempt => (dispatched = actionAttempt),
   );
   dispatch(action);
   return dispatched;
 };
 
-it('should dispatch cycleFlash on LOCATION_CHANGE', () => {
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
+it('should dispatch cycleFlash on TRIGGER actions', () => {
+  const mw = middleware({ trigger: TRIGGER });
+
   const action = {
-    type: LOCATION_CHANGE,
+    type: TRIGGER,
   };
 
-  dispatchWithFakeStore(action);
+  dispatchWithFakeStore(mw, action);
 
   expect(mockDispatch).toHaveBeenCalledWith(cycleFlash());
+});
+
+it('should not dispatch cycleFlash on other actions', () => {
+  const mw = middleware({ trigger: TRIGGER });
+
+  const action = {
+    type: 'BAR',
+  };
+
+  dispatchWithFakeStore(mw, action);
+
+  expect(mockDispatch).not.toHaveBeenCalledWith();
+});
+
+it('should not dispatch cycleFlash if no config is provided', () => {
+  const mw = middleware();
+
+  const action = {
+    type: TRIGGER,
+  };
+
+  dispatchWithFakeStore(mw, action);
+
+  expect(mockDispatch).not.toHaveBeenCalled();
 });

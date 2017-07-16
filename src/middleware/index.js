@@ -1,18 +1,12 @@
-import { LOCATION_CHANGE } from 'react-router-redux';
 import { cycleFlash } from '../actions';
 
-const middleware = ({ dispatch }) => (
+const defaultConfig = {
+  trigger: '',
+};
+
+const middleware = (config = defaultConfig) => ({ dispatch }) => (
   next => (action) => {
-    switch (action.type) {
-      case LOCATION_CHANGE: {
-        dispatch(cycleFlash());
-        return next(action);
-      }
-
-      default:
-        break;
-    }
-
+    if (config.trigger && action.type === config.trigger) dispatch(cycleFlash());
     return next(action);
   }
 );
