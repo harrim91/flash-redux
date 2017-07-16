@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: 'ReactRouterReduxFlash',
+    library: 'redux-flash',
     libraryTarget: 'umd',
   },
   module: {

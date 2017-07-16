@@ -6,8 +6,16 @@ const defaultConfig = {
 
 const middleware = (config = defaultConfig) => ({ dispatch }) => (
   next => (action) => {
-    if (config.trigger && action.type === config.trigger) dispatch(cycleFlash());
-    return next(action);
+    switch (action.type) {
+      case config.trigger: {
+        dispatch(cycleFlash());
+        return next(action);
+      }
+
+      default: {
+        return next(action);
+      }
+    }
   }
 );
 
