@@ -1,6 +1,8 @@
 import uuid from 'uuid';
 
-function Flash(message, type) {
+const DEFAULT_TYPE = 'message';
+
+function Flash(message, type = DEFAULT_TYPE) {
   this.key = uuid();
   this.message = message;
   this.type = type;

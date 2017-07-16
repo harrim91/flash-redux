@@ -1,9 +1,4 @@
-import flashMiddleware from './middleware';
-import flashReducer from './reducers';
-import { clearFlash, flashNext, flashNow } from './actions';
-
-export { flashMiddleware };
-export { flashReducer };
-export { flashNext };
-export { flashNow };
-export { clearFlash };
+export { flashMiddleware } from './middleware';
+export { flashReducer } from './reducers';
+export { clearFlash, flashNext, flashNow } from './actions';
+export { Flash } from './factories';

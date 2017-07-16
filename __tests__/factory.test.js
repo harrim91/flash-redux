@@ -11,3 +11,11 @@ test('it creates a flash message with a unique id, and the passed type and messa
     message: 'foo',
   });
 });
+
+test('it creates a flash message with a unique id, and the passed message and default type', () => {
+  expect(new Flash('foo')).toEqual({
+    key: uuid(),
+    type: 'message',
+    message: 'foo',
+  });
+});
