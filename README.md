@@ -1,5 +1,7 @@
 # redux-flash
 
+[![Build Status](https://travis-ci.org/harrim91/flash-redux.svg?branch=master)](https://travis-ci.org/harrim91/flash-redux)
+
 Redux middleware, actions and reducer for managing flash messages.  
 
 Based on rails flash etc.  
