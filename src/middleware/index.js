@@ -1,13 +1,13 @@
 import { cycleFlash } from '../actions';
 
 const defaultConfig = {
-  trigger: '',
+  cycle: '',
 };
 
 const middleware = (config = defaultConfig) => ({ dispatch }) => (
   next => (action) => {
     switch (action.type) {
-      case config.trigger: {
+      case config.cycle: {
         dispatch(cycleFlash());
         return next(action);
       }

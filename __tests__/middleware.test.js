@@ -22,7 +22,7 @@ afterEach(() => {
 });
 
 it('should dispatch cycleFlash on TRIGGER actions', () => {
-  const mw = middleware({ trigger: TRIGGER });
+  const mw = middleware({ cycle: TRIGGER });
 
   const action = {
     type: TRIGGER,
@@ -34,7 +34,7 @@ it('should dispatch cycleFlash on TRIGGER actions', () => {
 });
 
 it('should not dispatch cycleFlash on other actions', () => {
-  const mw = middleware({ trigger: TRIGGER });
+  const mw = middleware({ cycle: TRIGGER });
 
   const action = {
     type: 'BAR',
