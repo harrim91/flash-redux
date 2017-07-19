@@ -18,7 +18,8 @@
     "build:umd:min": "webpack -p src/index.js dist/redux-flash.min.js",
     "clean": "rm -rf dist lib es",
     "lint": "eslint src test",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,8 @@
   },
   "homepage": "https://github.com/harrim91/redux-flash#readme",
   "dependencies": {
+    "ig": "0.0.5",
+    "npm": "^5.3.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
@@ -44,6 +47,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.0.1",
     "eslint": "^4.2.0",
     "eslint-config-airbnb-base": "^11.2.0",
