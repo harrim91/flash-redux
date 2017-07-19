@@ -1,5 +1,5 @@
 {
-  "name": "redux-flash",
+  "name": "flash-redux",
   "version": "0.0.1",
   "description": "Flash messages for redux applications",
   "main": "lib/index.js",
@@ -14,8 +14,8 @@
     "build": "npm run lint & npm run build:commonjs & npm run build:es & npm run build:umd & npm run build:umd:min",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib",
     "build:es": "cross-env BABEL_ENV=es babel src -d es",
-    "build:umd": "webpack src/index.js dist/redux-flash.js",
-    "build:umd:min": "webpack -p src/index.js dist/redux-flash.min.js",
+    "build:umd": "webpack src/index.js dist/flash-redux.js",
+    "build:umd:min": "webpack -p src/index.js dist/flash-redux.min.js",
     "clean": "rm -rf dist lib es",
     "lint": "eslint src test",
     "test": "jest --verbose",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/harrim91/redux-flash.git"
+    "url": "git+ssh://git@github.com/harrim91/flash-redux.git"
   },
   "keywords": [
     "redux",
@@ -32,9 +32,9 @@
   "author": "Michael Harrison",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/harrim91/redux-flash/issues"
+    "url": "https://github.com/harrim91/flash-redux/issues"
   },
-  "homepage": "https://github.com/harrim91/redux-flash#readme",
+  "homepage": "https://github.com/harrim91/flash-redux#readme",
   "dependencies": {
     "ig": "0.0.5",
     "npm": "^5.3.0",
