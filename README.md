@@ -1,7 +1,6 @@
 # redux-flash
 
 [![Build Status](https://travis-ci.org/harrim91/flash-redux.svg?branch=master)](https://travis-ci.org/harrim91/flash-redux)
-
 [![Coverage Status](https://coveralls.io/repos/github/harrim91/flash-redux/badge.svg?branch=master)](https://coveralls.io/github/harrim91/flash-redux?branch=master)
 
 Redux middleware, actions and reducer for managing flash messages.  
