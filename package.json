@@ -1,6 +1,6 @@
 {
   "name": "flash-redux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Flash messages for redux applications",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -36,8 +36,6 @@
   },
   "homepage": "https://github.com/harrim91/flash-redux#readme",
   "dependencies": {
-    "ig": "0.0.5",
-    "npm": "^5.3.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
